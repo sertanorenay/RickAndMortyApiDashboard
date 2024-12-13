@@ -1,11 +1,17 @@
 ### Frontend Assessment: Rick and Morty API
 
-Hazırlayan: Sertan Örenay
-React + Tailwind + Vite kullanıldı.
-Karakter özellikleri Türkçeleştirildi.
+#### Hazırlayan: Sertan Örenay
+
+GitHub Pages [linki](https://sertanorenay.github.io/RickAndMortyApiDashboard): \
+https://sertanorenay.github.io/RickAndMortyApiDashboard
 
 Projeyi çalıştırmak için:
-1) Terminalinizi proje klasörüne yönlendirin.
-2) Web uygulamasını başlatmak için şu komutu terminalde çalıştırın: `vite`
+1) Terminalinizi proje klasörüne yönlendirin:
+    
+`cd <proje-dizini>`
 
-GitHub Pages linki:
+2) Web uygulamasını başlatmak için şu komutu terminalde çalıştırın: 
+`vite`
+
+React + Tailwind + Vite kullanıldı. \
+Karakter özellikleri Türkçeleştirildi.
