@@ -48,7 +48,7 @@ function Home() {
   return (
     <div className="min-h-screen py-8 bg-gray-50 select-none">
       <div className="container">
-        <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center">Rick and Morty Karakterleri</h1>
+        <h1 className="text-4xl font-bold mb-8 text-center text-[#043c6e]">Rick and Morty Karakterleri</h1>
         
         <FilterSection 
           filters={filters} 

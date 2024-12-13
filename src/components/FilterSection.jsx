@@ -13,7 +13,7 @@ function FilterSection({ filters, setFilters, onSearch }) {
     <div className="bg-white p-6 rounded-lg shadow-md mb-8">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
         <div className="space-y-1 text-center">
-          <label className="text-sm font-medium text-gray-700">İsim</label>
+          <label className="text-lg font-bold text-[#043c6e]">İsim</label>
           <input
             type="text"
             name="name"
@@ -24,7 +24,7 @@ function FilterSection({ filters, setFilters, onSearch }) {
           />
         </div>
         <div className="space-y-1 text-center">
-          <label className="text-sm font-medium text-gray-700">Durum</label>
+          <label className="text-lg font-bold text-[#043c6e]">Durum</label>
           <select
             name="status"
             value={filters.status}
@@ -38,7 +38,7 @@ function FilterSection({ filters, setFilters, onSearch }) {
           </select>
         </div>
         <div className="space-y-1 text-center">
-          <label className="text-sm font-medium text-gray-700">Tür</label>
+          <label className="text-lg font-bold text-[#043c6e]">Tür</label>
           <select
             name="species"
             value={filters.species}
@@ -58,7 +58,7 @@ function FilterSection({ filters, setFilters, onSearch }) {
           </select>
         </div>
         <div className="space-y-1 text-center">
-          <label className="text-sm font-medium text-gray-700">Cinsiyet</label>
+          <label className="text-lg font-bold text-[#043c6e]">Cinsiyet</label>
           <select
             name="gender"
             value={filters.gender}
