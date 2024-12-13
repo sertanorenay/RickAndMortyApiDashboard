@@ -8,7 +8,10 @@ export const translate = (key) => {
     Female: 'Kadın',
     Alien: "Uzaylı",
     Human: "İnsan",
-    Humanoid: "Humanoid",
+    Humanoid: "İnsansı",
+    Disease: "Hastalık",
+    Poopybutthole: "Kaka Deliği",
+    Animal: "Hayvan",
     "Mythological Creature": "Mitolojik Yaratık",
   }
 

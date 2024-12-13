@@ -1,6 +1,7 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Home from './Home'
-import './index.css'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './Home';
+import './index.css';
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
         <Route path="/" element={<Home />} />
       </Routes>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

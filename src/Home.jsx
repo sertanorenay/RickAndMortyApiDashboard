@@ -46,9 +46,9 @@ function Home() {
   if (error) return <div>Hata oluştu: {error.message}</div>
 
   return (
-    <div className="min-h-screen py-8 bg-gray-50">
+    <div className="min-h-screen py-8 bg-gray-50 select-none">
       <div className="container">
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">Rick and Morty Karakterleri</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center">Rick and Morty Karakterleri</h1>
         
         <FilterSection 
           filters={filters} 
@@ -90,7 +90,7 @@ function Home() {
         {selectedCharacter && (
           <CharacterDetail 
             character={selectedCharacter} 
-            onClose={() => setSelectedCharacter(null)} 
+            onClose={() => setSelectedCharacter(null)}
           />
         )}
       </div>

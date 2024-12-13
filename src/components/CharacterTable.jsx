@@ -11,19 +11,19 @@ const columnHelper = createColumnHelper()
 
 const columns = [
   columnHelper.accessor('name', {
-    header: 'İsim',
+    header: 'KARAKTER ADI',
     cell: info => info.getValue(),
   }),
   columnHelper.accessor('status', {
-    header: 'Durum',
+    header: 'DURUM',
     cell: info => translate(info.getValue()),
   }),
   columnHelper.accessor('species', {
-    header: 'Tür',
+    header: 'TÜR',
     cell: info => translate(info.getValue()),
   }),
   columnHelper.accessor('gender', {
-    header: 'Cinsiyet',
+    header: 'CİNSİYET',
     cell: info => translate(info.getValue()),
   }),
 ]
@@ -36,13 +36,20 @@ function CharacterTable({ data, onRowClick }) {
   })
 
   return (
-    <div className="overflow-x-auto">
-      <table className="min-w-full border-collapse border border-gray-200">
-        <thead>
+    <div className="overflow-x-auto rounded-xl shadow-lg border border-gray-100">
+      <table className="min-w-full divide-y divide-gray-200">
+        <thead style={{
+          backgroundColor: '#043c6e',
+          position: 'relative'
+        }}>
           {table.getHeaderGroups().map(headerGroup => (
-            <tr key={headerGroup.id}>
+            <tr key={headerGroup.id} style={{backgroundColor: '#043c6e'}}>
               {headerGroup.headers.map(header => (
-                <th key={header.id} className="border border-gray-200 p-2 bg-gray-50">
+                <th 
+                  key={header.id} 
+                  style={{backgroundColor: '#043c6e'}}
+                  className="px-6 py-4 text-left text-sm font-bold text-white uppercase tracking-wider"
+                >
                   {flexRender(
                     header.column.columnDef.header,
                     header.getContext()
@@ -52,15 +59,20 @@ function CharacterTable({ data, onRowClick }) {
             </tr>
           ))}
         </thead>
-        <tbody>
+        <tbody className="bg-white divide-y divide-gray-200">
           {table.getRowModel().rows.map(row => (
             <tr 
               key={row.id}
               onClick={() => onRowClick(row.original)}
-              className="hover:bg-gray-100 cursor-pointer"
+              className="hover:bg-blue-50 transition-all duration-200 ease-in-out cursor-pointer group"
             >
-              {row.getVisibleCells().map(cell => (
-                <td key={cell.id} className="border border-gray-200 p-2">
+              {row.getVisibleCells().map((cell, index) => (
+                <td 
+                  key={cell.id} 
+                  className={`px-6 py-4 whitespace-nowrap text-sm group-hover:text-blue-700
+                    ${index === 0 ? 'font-semibold text-gray-900' : 'text-gray-600'}
+                    transition-colors duration-200`}
+                >
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </td>
               ))}
