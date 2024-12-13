@@ -1,4 +1,5 @@
 import React from 'react'
+import { translate } from '../utils/translate'
 
 function CharacterDetail({ character, onClose }) {
   return (
@@ -29,19 +30,19 @@ function CharacterDetail({ character, onClose }) {
           <dl className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div>
               <dt className="text-sm font-medium text-gray-500">Durum</dt>
-              <dd className="mt-1 text-sm text-gray-900">{character.status}</dd>
+              <dd className="mt-1 text-sm text-gray-900">{translate(character.status)}</dd>
             </div>
             <div>
               <dt className="text-sm font-medium text-gray-500">Tür</dt>
-              <dd className="mt-1 text-sm text-gray-900">{character.species}</dd>
+              <dd className="mt-1 text-sm text-gray-900">{translate(character.species)}</dd>
             </div>
             <div>
               <dt className="text-sm font-medium text-gray-500">Cinsiyet</dt>
-              <dd className="mt-1 text-sm text-gray-900">{character.gender}</dd>
+              <dd className="mt-1 text-sm text-gray-900">{translate(character.gender)}</dd>
             </div>
             <div>
               <dt className="text-sm font-medium text-gray-500">Köken</dt>
-              <dd className="mt-1 text-sm text-gray-900">{character.origin.name}</dd>
+              <dd className="mt-1 text-sm text-gray-900">{translate(character.origin.name)}</dd>
             </div>
             <div>
               <dt className="text-sm font-medium text-gray-500">Son Konum</dt>

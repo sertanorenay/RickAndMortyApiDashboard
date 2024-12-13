@@ -5,6 +5,7 @@ import {
   getCoreRowModel,
   useReactTable,
 } from '@tanstack/react-table'
+import { translate } from '../utils/translate'
 
 const columnHelper = createColumnHelper()
 
@@ -15,15 +16,15 @@ const columns = [
   }),
   columnHelper.accessor('status', {
     header: 'Durum',
-    cell: info => info.getValue(),
+    cell: info => translate(info.getValue()),
   }),
   columnHelper.accessor('species', {
     header: 'Tür',
-    cell: info => info.getValue(),
+    cell: info => translate(info.getValue()),
   }),
   columnHelper.accessor('gender', {
     header: 'Cinsiyet',
-    cell: info => info.getValue(),
+    cell: info => translate(info.getValue()),
   }),
 ]
 
