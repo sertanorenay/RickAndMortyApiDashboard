@@ -21,6 +21,14 @@ function Home() {
   })
   const [currentPage, setCurrentPage] = useState(1)
 
+  const handleSearch = () => {
+    const newActiveFilters = Object.fromEntries(
+      Object.entries(filters).filter(([_, value]) => value !== '')
+    );
+    setActiveFilters(newActiveFilters);
+    setCurrentPage(1);
+  }
+
   const { data, isLoading, error } = useQuery({
     queryKey: ['characters', currentPage, activeFilters],
     queryFn: async () => {
@@ -29,21 +37,16 @@ function Home() {
         ...Object.fromEntries(
           Object.entries(activeFilters).filter(([_, value]) => value !== '')
         )
-      })
+      });
+      
+      console.log(`Request URL: https://rickandmortyapi.com/api/character?${params}`);
+
       const response = await axios.get(
         `https://rickandmortyapi.com/api/character?${params}`
-      )
+      );
       return response.data
     }
-  })
-
-  const handleSearch = () => {
-    setActiveFilters(filters)
-    setCurrentPage(1)
-  }
-
-  if (isLoading) return <div>Yükleniyor...</div>
-  if (error) return <div>Hata oluştu: {error.message}</div>
+  });
 
   return (
     <div className="min-h-screen py-8 bg-gray-50 select-none">
@@ -56,11 +59,32 @@ function Home() {
           onSearch={handleSearch}
         />
         
-        {data?.results?.length === 0 ? (
+        {/* Filtreleme sonucundaki durumlar: Yükleniyor, Sonuç Bulunamadı, Hata */}
+        {isLoading && (
           <div className="text-center py-8 text-gray-500 bg-white rounded-lg shadow">
-            Filtrelere uygun karakter bulunamadı.
+            <p className="text-lg">Yükleniyor...</p>
           </div>
-        ) : (
+        )}
+
+        {error && (
+          <div className="text-center py-8 text-gray-500 bg-white rounded-lg shadow">
+            {error.response?.status === 404 ? (
+              <p className="text-lg">Aradığınız sonuçlar bulunamadı.</p>
+            ) : (
+              <p className="text-lg">Hata oluştu: {error.message}</p>
+            )}
+          </div>
+        )}
+
+        {data?.results?.length === 0 && !isLoading && !error && (
+          <div className="text-center py-8 text-gray-500 bg-white rounded-lg shadow">
+            <p className="text-lg">Aradığınız sonuçlar bulunamadı.</p>
+            <p className="text-sm">Lütfen filtrelerinizi gözden geçirin ve yeniden deneyin.</p>
+          </div>
+        )}
+
+        {/* Filtreleme sonucunda veri varsa tabloda listelenir. */}
+        {data?.results?.length > 0 && (
           <div className="space-y-6">
             <CharacterTable 
               data={data?.results || []}
@@ -71,7 +95,7 @@ function Home() {
               <button
                 onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
                 disabled={currentPage === 1}
-                className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400"
+                className="bg-theme-blue disabled:bg-gray-400"
               >
                 Önceki
               </button>
@@ -79,7 +103,7 @@ function Home() {
               <button
                 onClick={() => setCurrentPage(prev => prev + 1)}
                 disabled={!data?.info?.next}
-                className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400"
+                className="bg-theme-blue disabled:bg-gray-400"
               >
                 Sonraki
               </button>

@@ -69,12 +69,12 @@ function CharacterTable({ data, onRowClick }) {
               {row.getVisibleCells().map((cell, index) => (
                 <td 
                   key={cell.id} 
-                  className={`px-6 py-4 whitespace-nowrap text-sm group-hover:text-blue-700
+                  className={`px-6 py-4 whitespace-nowrap text-base group-hover:text-theme-blue
                     ${index === 0 ? 'font-semibold text-gray-900' : 'text-gray-600'}
-                    transition-colors duration-200`}
+                    transition-colors duration-200`}                  
                 >
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </td>
+                </td>              
               ))}
             </tr>
           ))}

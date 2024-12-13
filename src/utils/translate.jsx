@@ -14,6 +14,7 @@ export const translate = (key) => {
     Animal: "Hayvan",
     "Mythological Creature": "Mitolojik Yaratık",
   }
+  {/* İçerikleri Türkçeleştirir */}
 
   return translations[key] || key
 } 

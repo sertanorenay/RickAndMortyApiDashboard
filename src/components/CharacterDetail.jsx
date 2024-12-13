@@ -31,24 +31,24 @@ function CharacterDetail({ character, onClose }) {
             
             <dl className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
-                <dt className="text-sm font-medium text-gray-500">Durum</dt>
-                <dd className="mt-1 text-sm text-gray-900">{translate(character.status)}</dd>
+                <dt className="text-base font-medium text-gray-500">Durum</dt>
+                <dd className="mt-1 text-base text-gray-900">{translate(character.status)}</dd>
               </div>
               <div>
-                <dt className="text-sm font-medium text-gray-500">Tür</dt>
-                <dd className="mt-1 text-sm text-gray-900">{translate(character.species)}</dd>
+                <dt className="text-base font-medium text-gray-500">Tür</dt>
+                <dd className="mt-1 text-base text-gray-900">{translate(character.species)}</dd>
               </div>
               <div>
-                <dt className="text-sm font-medium text-gray-500">Cinsiyet</dt>
-                <dd className="mt-1 text-sm text-gray-900">{translate(character.gender)}</dd>
+                <dt className="text-base font-medium text-gray-500">Cinsiyet</dt>
+                <dd className="mt-1 text-base text-gray-900">{translate(character.gender)}</dd>
               </div>
               <div>
-                <dt className="text-sm font-medium text-gray-500">Köken</dt>
-                <dd className="mt-1 text-sm text-gray-900">{translate(character.origin.name)}</dd>
+                <dt className="text-base font-medium text-gray-500">Köken</dt>
+                <dd className="mt-1 text-base text-gray-900">{translate(character.origin.name)}</dd>
               </div>
               <div>
-                <dt className="text-sm font-medium text-gray-500">Son Konum</dt>
-                <dd className="mt-1 text-sm text-gray-900">{translate(character.location.name)}</dd>
+                <dt className="text-base font-medium text-gray-500">Son Konum</dt>
+                <dd className="mt-1 text-base text-gray-900">{translate(character.location.name)}</dd>
               </div>
             </dl>
           </div>
