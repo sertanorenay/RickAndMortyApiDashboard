@@ -10,7 +10,7 @@ Projeyi çalıştırmak için:
     
 `cd <proje-dizini>`
 
-2) Web uygulamasını başlatmak için şu komutu terminalde çalıştırın: \
+2) Web uygulamasını başlatmak için şu komutu terminalde çalıştırın:
 
 `vite`
 
