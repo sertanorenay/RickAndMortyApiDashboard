@@ -1,6 +1,6 @@
 ### Frontend Assessment: Rick and Morty API
 
-#### Hazırlayan: Sertan Örenay
+This repository was created for a task related to a company's hiring process.
 
 GitHub Pages [linki](https://sertanorenay.github.io/RickAndMortyApiDashboard): \
 https://sertanorenay.github.io/RickAndMortyApiDashboard
